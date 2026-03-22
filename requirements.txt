@@ -2,3 +2,4 @@ flask
 numpy
 gunicorn
 flask-cors
+scikit-learn
