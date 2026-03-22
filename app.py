@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import pickle
+import os
 import numpy as np
 from flask_cors import CORS
 
@@ -71,5 +72,7 @@ def predict():
 
 
 # Run locally (Render will use gunicorn instead)
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
